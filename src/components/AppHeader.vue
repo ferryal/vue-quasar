@@ -1,19 +1,12 @@
 <template>
   <div class="header q-gutter-md q-py-md">
     <div class="row justify-between items-center">
-      <!-- Division 1: Logo and Site Name -->
       <div class="col-lg-4 col col-xs-6">
         <div class="flex items-center">
-          <img
-            alt="Main logo"
-            src="~assets/page-logo.png"
-            style="width: 20px; height: 20px"
-          />
-          <span class="text-white q-ml-xs text-weight-bold">hyperhire</span>
+          <img alt="Main logo" src="~assets/hyperhire-logo.svg" />
         </div>
       </div>
 
-      <!-- Division 2: Main Dropdown and Label -->
       <div
         v-if="!$q.screen.xs"
         class="col-lg-4 col flex items-center justify-center"
@@ -36,7 +29,6 @@
         </div>
       </div>
 
-      <!-- Division 3: Inquiry Button -->
       <div
         v-if="!$q.screen.xs"
         class="col-lg-4 col flex items-center justify-end"

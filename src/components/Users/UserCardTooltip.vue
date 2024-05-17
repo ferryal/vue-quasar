@@ -9,10 +9,12 @@
           padding: 6px 12px;
           border-radius: 8px;
           gap: 8px;
+          font-weight: bold;
+          color: #00c696;
         "
       >
         <DollarIcon />
-        월 100만원
+        월 <span style="font-weight: bolder">100</span>만원
       </div>
       <ArrowDownIcon
         style="position: absolute; bottom: -9px; left: 50%; color: white"

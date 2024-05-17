@@ -1,6 +1,13 @@
 <template>
   <footer>
-    <div class="container footer" :class="{ mobile: $q.screen.xs }">
+    <div
+      class="footer"
+      :class="{
+        mobile: $q.screen.xs,
+        container: !$q.screen.xs,
+        'container-mobile': $q.screen.xs,
+      }"
+    >
       <div
         class="grid"
         :class="{
@@ -22,7 +29,7 @@
             :src="LogoDark"
             style="width: 187px; height: 34px"
           />
-          <div class="text-weight-bolder text-color-gray-shade-1">
+          <div class="text-weight-bolder text-color-gray-shade-1 text">
             우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
           </div>
 
@@ -57,7 +64,10 @@
               {{ service.name }}
             </div>
           </div>
-          <div class="text-color-gray flex items-center" style="gap: 8px">
+          <div
+            class="text-color-gray flex items-center pointer"
+            style="gap: 8px"
+          >
             바로가기 <ArrowRightIcon />
           </div>
         </div>
@@ -77,7 +87,7 @@
             'col-span-2': $q.screen.xs,
             'col-span-4': !$q.screen.xs,
           }"
-          style="gap: 16px"
+          style="gap: 16px; margin-top: 25px"
         >
           <div class="column" style="gap: 8px">
             <div class="text-color-gray-shade-1 fs-12">상호명</div>
@@ -105,7 +115,7 @@
           <div class="text-color-gray-shade-1 fs-12">사업자등록번호 CIN</div>
           <div class="column" style="gap: 4px">
             <div class="text-color-gray fs-13">427-86-01187</div>
-            <div class="text-color-gray fs-13">U74110DL2016PTC290812</div>
+            <div class="text-color-gray fs-13 bold">U74110DL2016PTC290812</div>
           </div>
         </div>
 
@@ -130,7 +140,7 @@
         </div>
       </div>
 
-      <div class="text-color-gray text-weight-bolder fs-13">
+      <div class="text-color-gray text-weight-bolder fs-13 year">
         ⓒ {{ new Date().getFullYear() }} Hyperhire
       </div>
     </div>
@@ -155,12 +165,12 @@ const services = [
     icon: UserIcon,
   },
   {
-    name: "한국어 가능 외국인 채용",
-    icon: SettingIcon,
-  },
-  {
     name: "해외 개발자 활용 서비스",
     icon: KorIcon,
+  },
+  {
+    name: "한국어 가능 외국인 채용",
+    icon: SettingIcon,
   },
 ];
 </script>
@@ -171,11 +181,27 @@ footer {
   padding-top: 80px;
   padding-bottom: 80px;
 
+  .text {
+    width: 250px;
+  }
+
+  .year {
+    margin-top: 50px;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
   &.mobile {
     padding-top: 64px;
     padding-bottom: 64px;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .container-mobile {
+    padding: 0 7% !important;
   }
 }
 </style>

@@ -12,7 +12,7 @@
         :centeredSlides="true"
         :initialSlide="1"
         :cardsEffect="{
-          perSlideOffset: $q.screen.xs ? 10 : 21,
+          perSlideOffset: $q.screen.xs ? 15 : 21,
           perSlideRotate: 0,
           rotate: false,
           slideShadows: false,
@@ -45,48 +45,57 @@
   </Transition>
 
   <template v-if="$q.screen.xs">
-    <Transition appear enter-active-class="animated slow fadeInUp">
-      <div class="q-my-md">
-        <div class="row q-gutter-y-sm text-white">
-          <div class="col">
-            <div class="flex items-center mobile-checked-text">
-              <CheckboxIcon class="check-icon" />
-              <div>한국어 능력</div>
+    <div class="mobile-job">
+      <Transition appear enter-active-class="animated slow fadeInUp">
+        <div class="q-my-md">
+          <div class="row q-gutter-y-sm text-white">
+            <div class="col-4 q-mb-sm">
+              <div class="flex items-center mobile-checked-text">
+                <CheckboxIcon class="check-icon" />
+                <div>한국어 능력</div>
+              </div>
+            </div>
+            <div class="col-4 q-mb-sm">
+              <div class="flex items-center mobile-checked-text">
+                <CheckboxIcon class="check-icon" />
+                <div>업무 수행 능력</div>
+              </div>
             </div>
           </div>
-          <div class="col">
-            <div class="flex items-center mobile-checked-text">
-              <CheckboxIcon class="check-icon" />
-              <div>업무 수행 능력</div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row q-gutter-y-sm text-white">
-          <div class="col">
-            <div class="flex items-center mobile-checked-text">
-              <CheckboxIcon class="check-icon" />
-              <div>겸업 여부</div>
+          <div class="row q-gutter-y-sm text-white">
+            <div class="col-4">
+              <div class="flex items-center mobile-checked-text">
+                <CheckboxIcon class="check-icon" />
+                <div>겸업 여부</div>
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="flex items-center mobile-checked-text">
-              <CheckboxIcon class="check-icon" />
-              <div>평판 조회</div>
+            <div class="col-4">
+              <div class="flex items-center mobile-checked-text">
+                <CheckboxIcon class="check-icon" />
+                <div>평판 조회</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Transition>
-    <Transition
-      appear
-      enter-active-class="animated slow fadeInUp"
-      class="q-mb-md"
-    >
-      <div class="text-white" style="font-size: 14px">
-        개발자가 필요하신가요?
-      </div>
-    </Transition>
+      </Transition>
+      <Transition
+        appear
+        enter-active-class="animated slow fadeInUp"
+        class="q-mb-md"
+      >
+        <div
+          class="text-yellow"
+          style="
+            font-size: 14px;
+            text-decoration: underline;
+            font-weight: bolder;
+          "
+        >
+          개발자가 필요하신가요?
+        </div>
+      </Transition>
+    </div>
   </template>
 </template>
 
@@ -105,8 +114,8 @@ const swiperInstance = ref();
 const onSwiper = (swiper) => {
   swiperInstance.value = swiper;
 };
+
 const swiperNextSlide = () => {
-  console.log(swiperInstance.value);
   swiperInstance.value.slideNext();
 };
 
@@ -140,7 +149,7 @@ const swiperPrevSlide = () => {
 }
 .prev_btn {
   position: absolute;
-  left: 0px;
+  left: -20px;
   top: 50%;
   z-index: 1;
 
@@ -153,7 +162,7 @@ const swiperPrevSlide = () => {
 }
 .next_btn {
   position: absolute;
-  right: 0px;
+  right: -20px;
   top: 50%;
   z-index: 1;
 
@@ -180,5 +189,13 @@ const swiperPrevSlide = () => {
   height: 20px;
   width: 20px;
   margin-right: 5px;
+}
+
+.mobile-job {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100vw;
+  margin-bottom: 2rem;
 }
 </style>

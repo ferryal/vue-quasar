@@ -63,7 +63,8 @@ const jobs = [
 .swiper {
   width: 100%;
   height: 100%;
-  margin-top: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px !important;
 }
 
 .swiper-slide {

@@ -12,7 +12,7 @@
           <img
             src="~/assets/flag.png"
             alt="flag"
-            style="position: absolute; bottom: 0; right: 70px"
+            style="position: absolute; bottom: 0; right: 55px"
           />
         </div>
         <div class="col-12">
@@ -24,7 +24,10 @@
       </div>
     </div>
 
-    <div class="text-color-gray row q-gutter-y-sm font-size">
+    <div
+      class="text-color-gray row q-gutter-y-sm font-size"
+      :class="{ 'q-mt-md': !$q.screen.xs }"
+    >
       <div class="col-12">
         <div class="flex justify-center">
           <div class="q-py-xs q-px-sm text-box">마케팅 콘텐츠 제작</div>
@@ -51,8 +54,8 @@
 .card {
   border-radius: 12px;
   gap: 36px;
-  height: 30em;
-  width: 42%;
+  height: 27em;
+  width: 45%;
   box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.12);
 
   & .heading {
@@ -79,7 +82,7 @@
 .mobile-card {
   border-radius: 12px;
   height: 20em;
-  width: 35%;
+  width: 40%;
   margin-bottom: 20px;
   box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.12);
 
@@ -109,5 +112,9 @@
   width: fit-content;
   border-radius: 6px;
   border-color: #c1c5cf;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
